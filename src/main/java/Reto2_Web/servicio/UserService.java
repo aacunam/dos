@@ -98,10 +98,10 @@ public class UserService {
     public User authenticateUser(String email, String password) {
         Optional<User> usuario = userRepository.authenticateUser(email, password);
 
-        if (usuario.isEmpty()) {
-            return new User();
-        } else {
+        if (usuario.isPresent()) {
             return usuario.get();
+        } else {
+            return new User();
         }
     }
     
