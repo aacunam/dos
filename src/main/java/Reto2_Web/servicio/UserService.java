@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author USUARIO
+ * @author Armando Acuña
  */
 @Service
 public class UserService {
@@ -98,7 +98,7 @@ public class UserService {
     public User authenticateUser(String email, String password) {
         Optional<User> usuario = userRepository.authenticateUser(email, password);
 
-        if (usuario.isPresent()) {
+        if (usuario.isPresent()) {  ///
             return usuario.get();
         } else {
             return new User();

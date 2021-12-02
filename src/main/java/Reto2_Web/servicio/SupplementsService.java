@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 /**
  *
- * @author USUARIO
+ * @author Armando Acuña
  */
 @Service
 public class SupplementsService {
@@ -40,8 +40,7 @@ public class SupplementsService {
 
         if (accesory.getReference() != null) {
             Optional<Supplements> accesoryDb = clotheRepository.getClothe(accesory.getReference());
-            if (accesoryDb.isPresent()) {
-
+            if (accesoryDb.isPresent()) {  //
                 if (accesory.getBrand() != null) {
                     accesoryDb.get().setBrand(accesory.getBrand());
                 }

@@ -14,6 +14,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 
+/**
+ *
+ * @author Armando Acuña
+ */
 @Component
 @SpringBootApplication
 public class Reto2WebApplication implements CommandLineRunner {
