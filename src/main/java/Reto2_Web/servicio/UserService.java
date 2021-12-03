@@ -34,7 +34,8 @@ public class UserService {
             return user;
         } else {
             Optional<User> e = userRepository.getUser(user.getId());
-            if (e.isEmpty()) {
+            // if (e.isEmpty()) {
+            if (!e.isPresent()) {
                 if (emailExists(user.getEmail()) == false) {
                     return userRepository.create(user);
                 } else {
@@ -98,7 +99,7 @@ public class UserService {
     public User authenticateUser(String email, String password) {
         Optional<User> usuario = userRepository.authenticateUser(email, password);
 
-        if (usuario.isPresent()) {  ///
+        if (usuario.isPresent()) { ///
             return usuario.get();
         } else {
             return new User();
